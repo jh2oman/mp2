@@ -1,59 +1,154 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app='foundationApp'>
 <head>
   <meta charset="UTF-8">
-  <title>MP1 Starter</title>
-  <script src="lib/angular/angular.min.js"></script>
-  <script src="js/controllers.js"></script>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="foundation/css/foundation.css">
-  <script src="public/foundation/js/foundation.min.js"></script>
+  <title>Jacob Waterman|Personal Page</title>
+  <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+  <script src="./lib/angular/angular.min.js"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./foundation/css/foundation.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick-theme.css"/>
+<link rel="stylesheet" type="text/css" href="./lib/fullpage.js/jquery.fullPage.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 
 
-<body>
 
-	<nav class="top-bar" data-topbar role="navigation">
+<body>
+	
+<div class="sticky">
+	<nav class="top-bar" data-options="scrolltop:false" data-topbar role="navigation">
 	  <ul class="title-area">
 	    <li class="name">
-	      <h1><a href="#">MP2</a></h1>
+	      <a href="#"><img src="data/images/logo with white-name.png"/></a>
 	    </li>
-	     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-	    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-	  </ul>
+	     
+	    <li class="toggle-topbar menu-icon"><a href="#firstPage"><span></span></a></li>
 
+	  </ul>
 	  <section class="top-bar-section">
-	    <!-- Left Nav Section -->
-	    <ul class="left">
-	      <li><a href="https://courses.engr.illinois.edu/cs498rk1/index.html">CS498RK</a></li>
+	    
+	    <ul id="myMenu"class="left">
+	    	
+	    	
+	      <li data-menuanchor="firstPage" class="active"><a href="#firstPage">About</a></li>
+    <li data-menuanchor="secondPage"><a href="#secondPage">Education</a></li>
+    <li data-menuanchor="thirdPage"><a href="#thirdPage">Photos</a></li>
+    <li data-menuanchor="fourthPage"><a href="#fourthPage">Contact</a></li>
+    <li><a href="imdb250.html">imdb250</a></li>
+    
 	    </ul>
 	  </section>
 	</nav>
-
-	<div class="row" ng-app = "demoApp">
-		<div class="panel small-centered columns small-12 medium-4">
-    	<input id="nameInput" ng-model="name" placeholder="Your Name" autofocus>
 	
-		<h3>Hello, {{name}}</h3>
+</div>
+<div id="fullpage">
 
-		</div>
+    <div class="section">
+    	<div class="se-pre-con"></div>
+    	<div class="signature">
+    	<img src="./data/images/white-name.png">
+    	</div>
+    	<div class="down-arrow">
+    	<strong class="hide-for-small-only"><div class="space"></div>
+    	<a class="down-arrow" href="#fourthPage"><i class="fa fa-angle-double-down fa-5x"></i></a></strong>
+    </div>
+    </div>
+    <div class="section">
+    	<h1>Education</h1>
+    	<strong class="hide-for-small-only"><div class="space"></div></strong>
+	  	<div class="medium-6 columns">
+	  		<div class="panel">
+				<h3>University of Illinois</h3>
+				  <p class="show-for-small-only"><small>I am currently studying Computer Engineering At University of Illinois. I enjoy doing Web Dev projects on the side and being active in my service fraternity, Alpha Phi Omega.</small></p>
+				  <p class="hide-for-small-only">I am currently studying Computer Engineering At University of Illinois. I enjoy doing Web Dev projects on the side and being active in my service fraternity, Alpha Phi Omega.</p>
+			</div>
+	  	</div>
+	  	<div class="medium-6 columns">
+	  		<div class="panel">
+				<h3>John Burroughs School</h3>
+				  <p class="show-for-small-only"><small>Located in St. Louis, JBS is one of the best schools of its kind. Here I learned that opprotunity is all around me. All I need to do is reach out to take it.</small></p>
+				  <p class="hide-for-small-only">Located in St. Louis, JBS is one of the best schools of its kind. Here I learned that opprotunity is all around me. All I need to do is reach out to take it.</p>
+			</div>
+	  	</div>
+    </div>
+    <div class="section">
+	<div class= "single-item" data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "dots":true, "arrows":false}'>
+		
+  <div class="contain">
+  	<img data-interchange="
+  	[./data/images/slide0.jpg, (default)], 
+  	[./data/images/slide0s.jpg,(small)], 
+  	[./data/images/slide0m.jpg,(medium)] ">
+  	<noscript><img src="./data/images/slide0.jpg" alt="a selfie of me"/></noscript>
+  </div>
+  <div class="contain">
+  	<img data-interchange="
+  	[./data/images/slide1.jpg, (default)], 
+  	[./data/images/slide1s.jpg,(small)], 
+  	[./data/images/slide1m.jpg,(medium)] ">
+  	<noscript><img src="./data/images/slide1.jpg" alt="grafiti in london"/></noscript>
+  </div>
+  <div class="contain">
+  	<img data-interchange="
+  	[./data/images/slide2.jpg, (default)], 
+  	[./data/images/slide2s.jpg,(small)], 
+  	[./data/images/slide2m.jpg,(medium)] ">
+  	<noscript><img src="./data/images/slide2.jpg" alt="camera over istanbul"/></noscript>
+  </div>
+  <div class="contain">
+  	<img data-interchange="
+  	[./data/images/slide3.jpg, (default)], 
+  	[./data/images/slide3s.jpg,(small)], 
+  	[./data/images/slide3m.jpg,(medium)] ">
+  	<noscript><img src="./data/images/slide3.jpg" alt="locks on a bridge"/></noscript>
+  </div>
+  <div class="contain">
+  	<img data-interchange="
+  	[./data/images/slide4.jpg, (default)], 
+  	[./data/images/slide4s.jpg,(small)], 
+  	[./data/images/slide4m.jpg,(medium)] ">
+  	<noscript><img src="./data/images/slide4.jpg" alt="sunset through sunglasses"/></noscript>
+  </div>
+  <div class="contain">
+  	<img src="./data/images/slide5m.jpg" alt="colorful plates"/>
+  </div>
+</div>
+</div>
+    <div class="section">
+    <div class="row">
+    	<div class="columns small-6">
+	<a href="https://www.flickr.com/photos/112788272@N02/" ><img src="./data/images/icons/flickr.png"></a>
+</div>
+	<div class="columns small-6">
+	<a href="https://www.facebook.com/jacob.waterman.33" ><img src="./data/images/icons/facebook.png"></a>
+</div>
+    </div>
+    <strong class="hide-for-small-only"><div class="space"></div></strong>
+    <strong class="show-for-small-only"><div class="space-small"></div></strong>
+    <div class="row">
+    	<div class="columns small-6">
+	<a href="https://www.linkedin.com/in/watermanjacob"><img  src="./data/images/icons/linkedin.png"></a>
+</div>
+	<div class="columns small-6">
+	<a href="https://plus.google.com/u/0/105156305577998177410/posts" ><img src="./data/images/icons/google-plus.png"></a>
+</div>
+    </div>
 	</div>
-	<div class="row">
-		<div class="alert columns small-12 large-6">
-			<div><img src="http://lorempixel.com/400/200/cats" /></div>
-
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit velit temporibus, fugit recusandae aliquid officiis molestias possimus reprehenderit quos. Facere dolores, nulla optio recusandae. Voluptatibus aut esse nulla saepe sit ut amet, neque officia officiis quam ea ex adipisci, quaerat, eligendi veniam iste temporibus. Aperiam ea quos fugiat provident, voluptatum reiciendis mollitia voluptates, odio quam at, deserunt animi voluptas odit aliquid saepe voluptate distinctio excepturi. Deserunt, id esse fuga cum accusantium eos obcaecati odit veritatis molestias illum sequi repellat, quisquam quasi architecto velit blanditiis perferendis, nulla eligendi non laboriosam. Eligendi sint, voluptatem ipsam dolore eum temporibus dicta, quaerat ea molestias placeat, asperiores minima sit explicabo! Repellat qui ducimus ipsum. Dignissimos at, aliquid vitae asperiores omnis provident voluptatibus, itaque delectus. Porro corrupti vel culpa, delectus in doloremque nam ratione aliquid ullam non iusto magnam, repudiandae, magni a quasi voluptatum inventore exercitationem quibusdam sint autem totam ex quia possimus. Similique ad fugiat eligendi magnam ab, ex nulla unde eos, tempora quis consequatur maxime inventore perferendis voluptatem non nam dignissimos voluptatum dolor quasi quidem molestias maiores doloribus. Omnis ipsa fugit amet! Eum repellat deleniti fuga omnis in maiores rem iusto, qui quasi ipsum illum odit laudantium molestiae, nostrum ipsam fugit animi atque! Non.
-		</div>
-		<div class="columns small-12 large-6">
-	  	<div><img src="http://lorempixel.com/400/200/nature" />	</div>
-	  	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt nobis facere sint placeat necessitatibus reprehenderit amet quas minima beatae illo nemo labore, maxime adipisci, accusamus voluptates repudiandae quia, ut excepturi ea quis obcaecati molestias error architecto unde? Hic vel facere porro magnam ipsam omnis eos ducimus, architecto velit beatae modi natus sunt suscipit quo optio qui repellat, blanditiis consequuntur. Fuga omnis porro quis inventore in voluptatum veritatis illum beatae rem. Labore nam saepe cupiditate quod, itaque quidem libero, quas tempore incidunt, quos earum repudiandae recusandae quia voluptas ducimus inventore, expedita. Alias minima, commodi aut, aspernatur laborum quae mollitia pariatur suscipit ad accusamus a ipsam fuga necessitatibus voluptas esse error reprehenderit provident. Sequi architecto ipsum qui enim labore sunt incidunt ullam pariatur. Minus porro error ipsa perferendis exercitationem debitis dicta asperiores nostrum cum voluptas qui dolores odit numquam incidunt cumque eos nemo architecto repudiandae adipisci, eius ut, aut suscipit minima perspiciatis consectetur. Ratione quisquam neque voluptatem? Qui, aspernatur iste quaerat iure. Debitis nobis minus animi mollitia libero temporibus perferendis ratione, inventore ullam, eos ut porro, velit quibusdam rerum possimus, ex! Quidem consectetur obcaecati ad veritatis. Velit illum aliquid tenetur, nisi illo quaerat labore nemo id sequi eveniet consequuntur. Voluptate, similique, rem!</div>
-	</div>
- 
-
-
-  <script src="js/script.js"></script>
-  <script src="lib/jquery-2.1.3.min/index.js"></script>
+</div>
+  <script src="./lib/jquery-2.1.3.min/index.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="./foundation/js/foundation.min.js"></script>
   <script src="http://localhost:35729/livereload.js"></script>
+  <script>$(document).foundation();</script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+  <script src="./js/script.js"></script>
+  <scriptsrc="./lib/slick.js/slick/slick.js"></script>
+  <script src="./lib/fullpage.js/vendors/jquery.easings.min.js"></script>
+  <script type="text/javascript" src="./lib/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
+  <script type="text/javascript" src="./lib/fullpage.js/jquery.fullPage.js"></script>
+
 </body>
 </html>

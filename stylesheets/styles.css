@@ -1,0 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url("http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather");
+@import url("http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css");
+/* line 5, ../sass/_base.scss */
+h1 {
+  font-size: 3.125rem;
+}
+
+/* line 7, ../sass/_base.scss */
+h3 {
+  font-size: 4.2rem;
+  color: blue;
+}
+
+/* line 13, ../sass/_base.scss */
+.test {
+  font-size: 1.2rem;
+  color: #2176C7;
+}
+
+/* line 18, ../sass/_base.scss */
+section {
+  display: block;
+}
+
+/* line 21, ../sass/_base.scss */
+p {
+  color: #003366;
+}

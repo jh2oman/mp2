@@ -1,16 +1,33 @@
-var divs = document.getElementsByClassName('alert');
-for(var i=0; i<divs.length; i++) {
-  divs[i].addEventListener("click", highlightThis);
-  /*
-  divs[i].addEventListener("click", highlightThis, true);
-  divs[i].addEventListener("click", highlightThis, false);*/
-}
+var foundationApp = angular.module('foundationApp', []);
 
-function highlightThis(event) {
-    //event.stopPropagation();
-  
-    var backgroundColor = this.style.backgroundColor;
-    this.style.backgroundColor='yellow';
-    alert(this.className);
-    this.style.backgroundColor=backgroundColor;
+foundationApp.run(function($rootScope) {
+    $rootScope.$on('$viewContentLoaded', function () {
+        $(document).foundation();
+    });
+});
+
+
+$(document).ready(function() {
+    $('#fullpage').fullpage(
+    {
+    	anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+    	menu:'#myMenu',
+    	recordHistory:false,
+    	sectionsColor: ['#2980b9', '#2ecc71', '#ecf0f1', '#9b59b6', '#34495e']
+    });
+  });
+
+$(document).ready(function(){
+    $('#show').live('click', function(event) {        
+         $('#content').toggle('show');
+    });
+});
+
+$(function(){
+	var cw = $('.hero').width();
+	if(cw<1000)
+{
+$('.hero').css({'margin-bottom':-cw/5+'px'});
+$('.hero-inner').css({'margin-bottom':-cw/5+'px'});
 }
+});

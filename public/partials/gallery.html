@@ -1,0 +1,53 @@
+<section class="movieGallery">
+<div class ="search">
+			<h1>Top 250 imdb Movies</h1>
+			<h3><a href = "#/list">Switch to List View</a></h3>
+			<h3><a href = "#/picker">Let us Pick a Movie for You!</a></h3>
+			<label>Search to Narrow Results</label>
+			<input ng-model="query" placeholder="Search" autofucus>
+		</div>
+		<label class = "formgroup">Sort by:
+			<select ng-model="movieOrder">
+				<option value = "rank" >Rank</option>
+				<option value = "title">Title</option>
+			</select>
+		</label>
+
+		<label class = "formgroup">Genre
+			<select ng-model="genre">
+				<option value = "Crime" >Crime</option>
+				<option value = "Drama">Drama</option>
+				<option value = "Action">Action</option>
+				<option value = "Thriller">Thriller</option>
+				<option value = "Bibliography">Bibliography</option>
+				<option value = "History">History</option>
+				<option value = "Western">Western</option>
+				<option value = "Adventure">Adventure</option>
+				<option value = "Fantasy">Fantasy</option>
+				<option value = "Romance">Romance</option>
+				<option value = "Mystery">Mystery</option>
+				<option value = "Sci-Fi">Sci-Fi</option>
+			</select>
+		</label>
+
+		<label class = "formgroup">Ascending
+			<input type="radio" ng-model="direction" name="direction" checked>		
+		</label>
+		<label class = "formgroup">Decending
+			<input type="radio" ng-model="direction" name="direction" value="reverse">
+		</label>
+		<ul class="medium-block-grid-3 small-block-grid-2 large-block-grid-6">
+			
+			<li class="movie cf" ng-repeat="item in movies | filter: query | orderBy: movieOrder:direction | filter:genre:strict" >
+				<div class="panel">
+				<a href="#/details/{{movies.indexOf(item)}}">
+				<img ng-src="./data/images/{{item.imdbID}}.jpg" alt = "Photo of">
+				<div class="info">
+					<h3>{{item.title}}</h3>
+					<h4>Rank: {{item.rank}}</h4>
+				</div>
+				</a>
+			</div>
+			</li>
+		</ul>
+	</section>

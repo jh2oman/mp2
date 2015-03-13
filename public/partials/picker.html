@@ -1,0 +1,39 @@
+<section class="moviePicker">
+<div class ="search">
+			<h1>Let our Magic Algorithm Pick a Movie for you</h1>
+			<h3><a href = "#/list">Switch to List View</a></h3>
+			<h3><a href = "#/list">Switch to Gallery View</a></h3>
+		</div>
+		<label class = "formgroup">How do you feel right now?
+			<select ng-model="genre.genre">
+				<option value = "Crime" >Dangerous</option>
+				<option value = "Drama">Dramatic</option>
+				<option value = "Action">Like Fighting</option>
+				<option value = "Thriller">Exhilerated</option>
+				<option value = "History">Historical</option>
+				<option value = "Western">Wild</option>
+				<option value = "Adventure">Adventurous</option>
+				<option value = "Fantasy">Out of this World</option>
+				<option value = "Romance">Sad</option>
+				<option value = "Mystery">Clever</option>
+				<option value = "Sci-Fi">Scientific</option>
+
+			</select>
+		</label>
+		<a ng-click="show=true" class="button">Run Algorithm</a>
+
+		<ul ng-show="show" class="medium-block-grid-3 small-block-grid-2 large-block-grid-6">
+			<h2 ng-show="show">The Magical Algorithm has Selected these Movies, Enjoy!</h2>
+			<li class="movie cf" ng-repeat="item in movies | limitTo:50 |filter:genre:strict |filter:rated:strict" >
+				<div class="panel">
+				<a href="#/details/{{movies.indexOf(item)}}">
+				<img ng-src="./data/images/{{item.imdbID}}.jpg" alt = "Photo of">
+				<div class="info">
+					<h3>{{item.title}}</h3>
+					<h4>Rank: {{item.rank}}</h4>
+				</div>
+				</a>
+			</div>
+			</li>
+		</ul>
+	</section>

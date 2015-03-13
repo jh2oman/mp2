@@ -12,7 +12,9 @@ module.exports = function(grunt) {
         },
         files: {
           'public/js/script.js': ['js/script.js'],
-          'public/js/controllers.js': ['js/controllers.js']
+          'public/js/controllers.js': ['js/controllers.js'],
+          'public/js/app1.js': ['js/app1.js']
+
         } //files
       } //my_target
     }, //uglify

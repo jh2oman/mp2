@@ -1,0 +1,19 @@
+<section class="movieInfo">
+	<div class="movie cf" ng-model="movies">
+		<div class="row">
+			<div class="small-2 columns"><div class="space"></div><a href="#/details/{{prevItem}}"><i class="fa fa-chevron-left fa-3x"></i></a></div>
+			<div class="small-8 columns">
+		<h1>{{movies[whichItem].title}}</h1>
+		<img ng-src="./data/images/{{movies[whichItem].imdbID}}.jpg" alt = "Photo of{{movies[whichItem].title}}">
+		<div class = "info">
+		<h3>Ranked #{{movies[whichItem].rank}} on imdb</h3>
+		<h3>Rated:{{movies[whichItem].rated}}</h3>
+		<h3>Premiered {{movies[whichItem].released}}</h3>
+		<h3>Duration: {{movies[whichItem].runtime}}</h3>
+		</div>
+		</div>
+		<div class="small-2 columns"><div class="space"></div><a href="#/details/{{nextItem}}"><i class="fa fa-chevron-right fa-3x"></i></a></div>
+	</div>
+</div>
+	<a href = "imdb250.html#/list">&laquo; Back to List View</a>
+</section>

@@ -1,0 +1,35 @@
+<section class="movieList">
+<div class ="search">
+			<h1>Top 250 imdb Movies</h1>
+			<h3><a href = "#/gallery">Switch to Gallery View</a></h3>
+			<h3><a href = "#/picker">Let us Pick a Movie for You!</a></h3>
+			<label>Search to View Selections</label>
+			<input ng-model="query" placeholder="Search" autofucus>
+		</div>
+		<label class = "formgroup">Order By:
+			<select ng-model="movieOrder">
+				<option value = "rank" >Rank</option>
+				<option value = "title">Title</option>
+			</select>
+		</label>
+
+		<label class = "formgroup">Ascending
+			<input type="radio" ng-model="direction" name="direction" checked>		
+		</label>
+		<label class = "formgroup">Decending
+			<input type="radio" ng-model="direction" name="direction" value="reverse">
+		</label>
+		<ul class="no-bullet" ng-show = "query">
+			<li class="movie cf" ng-animate="'animate'" ng-repeat="item in movies | filter: query | orderBy: movieOrder:direction" >
+				<div class="panel" id="listView">
+				<a href="#/details/{{movies.indexOf(item)}}">
+				<img ng-src="./data/images/{{item.imdbID}}.jpg" alt = "Photo of">
+				<div class="info">
+					<h3>{{item.title}}</h3>
+					<h4>Rank: {{item.rank}}</h4>
+				</div>
+				</a>
+			</div>
+			</li>
+		</ul>
+	</section>

@@ -1,7 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 $orange         : #BD3613;
 $blue           : #2176C7;
-
-$font-primary: Merriweather, serif;
-$font-secondary: Bree Serif, serif;
+$nav-blue		: #003366;
+$peach			: #f07057;
+$off-white		: #f2f2e8;
+$green			: #2ecc71;
+$time1			: 750ms; //dont forget to change in javascript if you change here 
+$font-family-sans-serif:'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-script:'SegoeScriptW10-Regular';
 
 $default-border-radius : 10px;
+
+ $topbar-bg-color: $nav-blue;
+ $topbar-bg: $topbar-bg-color;
